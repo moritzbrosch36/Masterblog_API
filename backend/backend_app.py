@@ -52,7 +52,7 @@ def add_post():
     return jsonify(new_post), 201 # 201 Created
 
 
-@app.route('api/posts/<int:post_id>', methods=['DELETE'])
+@app.route('/api/posts/<int:post_id>', methods=['DELETE'])
 def delete_post(post_id):
     global POSTS
     post_to_delete = next((post for post in POSTS if post["id"] == post_id), None)
